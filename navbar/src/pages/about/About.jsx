@@ -1,10 +1,10 @@
-import Navabr from "../../components/navabr/navbar";
+import Navbar from "../../components/navabr/navbar";
 import "./About.css"
 
 function About() {
   return (
     <>
-    <Navabr />
+    <Navbar />
     <main className="box-container-main">
         <p>Vamos trabalhar para melhorar nosso sistema!</p>
     </main>

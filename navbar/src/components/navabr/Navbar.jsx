@@ -1,37 +1,37 @@
-import { useState } from 'react';
-import "./Navbar.css"
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import "./Navbar.css";
 
-function Navabr() {
-    const [indexActive, setIndexActive] = useState(0)
-    const items = [
-        {path: "/", text: "Home"},
-        {path: "/about", text: "About"},
-        {path: "/logout", text: "Logout"},
-    ]
+function Navbar() {
+  const location = useLocation();
 
-   
-  return(
+  const items = [
+    { path: "/", text: "Início" },
+    { path: "/about", text: "Sobre" },
+    { path: "/login", text: "Sair" },
+  ];
+
+  return (
     <header>
-        <div className="logo-text">
-            <span>BERMAX GLOBAL</span>
-        </div>
+      <div className="logo-text">
+        <span>BERMAX GLOBAL</span>
+      </div>
 
-        <nav>
-            <ul>
-                {items.map((item, index) => (
-                    <li key={index}>
-                        <Link to={item.path} className={indexActive === index? "active": ""} onClick={() => {
-                            setIndexActive(index)
-                        }}>
-                            {item.text}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          {items.map((item, index) => (
+              <li key={index}>
+                <Link
+                  to={item.path}
+                  className={location.pathname === item.path ? "active" : ""}
+                >
+                  {item.text}
+                </Link>
+              </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }
 
-export default Navabr;
+export default Navbar;
