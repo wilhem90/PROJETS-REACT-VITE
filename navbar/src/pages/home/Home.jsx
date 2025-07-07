@@ -1,4 +1,3 @@
-import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navabr/navbar";
 import "./Home.css"
 
