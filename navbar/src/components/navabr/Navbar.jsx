@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import "./Navbar.css"
+import { Link } from 'react-router-dom';
 
 function Navabr() {
     const [indexActive, setIndexActive] = useState(0)
     const items = [
-        {path: "#", text: "Home"},
-        {path: "#", text: "About"},
-        {path: "#", text: "Logout"},
+        {path: "/", text: "Home"},
+        {path: "/about", text: "About"},
+        {path: "/logout", text: "Logout"},
     ]
 
    
@@ -20,11 +21,11 @@ function Navabr() {
             <ul>
                 {items.map((item, index) => (
                     <li key={index}>
-                        <a href={item.path} className={indexActive === index? "active": ""} onClick={() => {
+                        <Link to={item.path} className={indexActive === index? "active": ""} onClick={() => {
                             setIndexActive(index)
                         }}>
                             {item.text}
-                        </a>
+                        </Link>
                     </li>
                 ))}
             </ul>
