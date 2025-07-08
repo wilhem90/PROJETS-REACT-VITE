@@ -26,6 +26,10 @@ header .logo-text span {
     box-shadow: 5px 5px 10px #0080008f;
 }
 
+header .logo-text a {
+    text-decoration: none;
+}
+
 header .logo-text span:hover {
     box-shadow: 2px 2px 50px 15px #0080008f;
     border-radius: 5px;

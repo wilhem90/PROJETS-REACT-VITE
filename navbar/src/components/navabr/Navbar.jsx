@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <header>
       <div className="logo-text">
-        <span>BERMAX GLOBAL</span>
+        <Link to="/"><span>BERMAX GLOBAL</span></Link>
       </div>
 
       <nav>
